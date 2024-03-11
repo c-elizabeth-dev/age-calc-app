@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body>
+
+        <main class="curved-box">
+
+            <div class="date-inputs-container">
+                <form> 
+                    <div class="input-sections">
+                        <label for="day">DAY</label>
+                        <select name="day" id="day"></select>
+                    </div>
+                    <div class="input-sections">
+                        <label for="month">MONTH</label>
+                        <select name="month" id="month"></select>
+                    </div>
+                    <div class="input-sections">
+                        <label for="year">YEAR</label>
+                        <select name="year" id="year"></select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="separation">
+                <div id="horizontal-line">
+                    <hr />
+                <div id="svg-arrow" onClick="calculateAge()">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="46" height="44" 
+                    viewBox="0 0 46 44">
+                        <g 
+                            fill="none" stroke="#FFF" 
+                            stroke-width="2">
+                                <path 
+                                    d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
+                        </g>
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="ouput-container">
+                <p id="years">years</p>
+                <p id="months">months</p>
+                <p id="days">days</p>
+            </div>
+
+        </main>
+
+
+
+</body>
+<script src="script.js"></script>
+</html>
