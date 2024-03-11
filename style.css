@@ -42,18 +42,27 @@ form {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
+
 label{
-    font-size: 12px;
+    font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: gray;
     padding: 5px;
+    letter-spacing: 2px;
 }
 
 select {
-    width:70px;
+    width:150px;
     border-radius: 5px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 
@@ -86,23 +95,25 @@ select {
 
 #svg-arrow:hover{
     background-color: hsl(0, 0%, 8%);
-  }
-
-
-#years {
-    font-size: 35px;
-    font-weight: 900;
-    font-style: italic;
 }
 
-#months {
+
+#output {
     font-size: 35px;
     font-weight: 900;
     font-style: italic;
+    display:flex;
+    flex-direction: column !important;
 }
 
-#days {
-    font-size: 35px;
-    font-weight: 900;
-    font-style: italic;
+#output p {
+    margin: 5px 0; 
+}
+
+#output p :first {
+    color: blueviolet;
+}
+
+.purple-text {
+    color: purple;
 }

@@ -70,17 +70,46 @@ function populateYears(){
         option.textContent = year - i;
         yearSelect.appendChild(option);
     }
-}
+};
 
 populateDays(monthSelect.value);
 populateYears();
 
 yearSelect.onchange = function() {
     populateDays(monthSelect.value);
-}
+};
 monthSelect.onchange = function() {
     populateDays(monthSelect.value);
-}
+};
 daySelect.onchange = function() {
     previousDay = daySelect.value;
-}
+};
+
+
+//---- this part of code gets the DOB user has input and calculates their age
+//------by subtracting the birth date from the current date and then extracting 
+//--------the years, months and days from the difference
+
+const button = document.getElementById('svg-arrow');
+
+button.onclick = function calculateAge() {
+    let today = new Date();
+    let showAge = document.getElementById('output');
+    let yearOfBirth = document.getElementById('year').value;
+    let monthOfBirth = document.getElementById('month').selectedIndex;
+    let dayOfBirth = document.getElementById('day').value;
+
+    let birthDate = new Date(yearOfBirth, monthOfBirth, dayOfBirth);
+    let ageInMilliseconds = today - birthDate;
+
+    let years = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365));
+    let months = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30.44));
+    let days = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+
+    showAge.innerHTML = `${years} years<br> ${months} months<br> ${days} days`;
+};
+
+
+
+
+
