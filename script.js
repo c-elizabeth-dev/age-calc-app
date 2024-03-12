@@ -104,7 +104,20 @@ button.onclick = function calculateAge() {
 
     let years = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365));
     let months = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30.44));
-    let days = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)); //wrong
+
+    // Calculate days separately 
+    let remainingMilliseconds = ageInMilliseconds % (1000 * 60 * 60 * 24 * 365);
+    let days = Math.floor(remainingMilliseconds / (1000 * 60 * 60 * 24));
+
+    // Adjust months and days if they exceed the limits
+    if (months >= 12) {
+        years++;
+        months = 0;
+    }
+    if (days >= 30.44) {
+        months++;
+        days = 0;
+    }
 
     showAge.innerHTML = `${years} years<br> ${months} months<br> ${days} days`;
 };
